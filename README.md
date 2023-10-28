@@ -8,7 +8,7 @@ In this repository, you will find code authored by us, which can be used as a re
 
 ## Request Access to Specific Projects
 
-If you need access to code and information related to specific projects that may not be publicly shared due to confidentiality agreements or other reasons, please do not hesitate to [contact us](mailto:bertrand.kwibuka@alumni.ashoka.edu.in). We are more than happy to discuss your needs and share relevant details upon request.
+If you need access to code and information related to specific projects that may not be publicly shared due to confidentiality agreements or other reasons, please do not hesitate to [contact Me](mailto:bertrand.kwibuka@alumni.ashoka.edu.in). We are more than happy to discuss your needs and share relevant details upon request.
 
 Feel free to explore the code samples available in this repository, and if you have any questions or require further assistance, do not hesitate to get in touch.
 
