@@ -4,7 +4,14 @@ Welcome to the **Economics Code Samples** repository. This collection of code is
 
 ## Repository Content
 
-In this repository, you will find code authored by us, which can be used as a reference for various economics-related tasks and analyses. These code samples are intended to assist fellow economists, researchers, and developers in their work.
+In this repository, you will find code I authored , which can be used as a reference for various economics-related tasks and analyses. These code samples are intended to assist fellow economists, researchers, and developers in their work.
+
+### Content specifics:
+
+1. STATA Code
+2. Python Code
+3. Various data preprocessing processes
+4. Check [other repositories on my profile](https://github.com/GaelKBertrand?tab=repositories&q=&type=public&language=&sort=name) for other detailed computer science or economics projects
 
 ## Request Access to Specific Projects
 
