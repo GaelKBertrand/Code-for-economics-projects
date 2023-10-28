@@ -6,6 +6,13 @@ Welcome to the **Economics Code Samples** repository. This collection of code is
 
 In this repository, you will find code authored by us, which can be used as a reference for various economics-related tasks and analyses. These code samples are intended to assist fellow economists, researchers, and developers in their work.
 
+### Content specifics:
+
+#### STATA Code
+#### Python Code 
+#### Various data preprocessing processes
+#### Check other repositories on my profile for other detailed computer science or economics projects
+
 ## Request Access to Specific Projects
 
 If you need access to code and information related to specific projects that may not be publicly shared due to confidentiality agreements or other reasons, please do not hesitate to [contact Me](mailto:bertrand.kwibuka@alumni.ashoka.edu.in). We are more than happy to discuss your needs and share relevant details upon request.
