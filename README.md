@@ -8,10 +8,11 @@ In this repository, you will find code authored by us, which can be used as a re
 
 ### Content specifics:
 
-**STATA Code**
-**Python Code**
-**Various data preprocessing processes**
-**Check other repositories on my profile for other detailed computer science or economics projects**
+1. STATA Code
+2. Python Code
+3. Various data preprocessing processes
+4. Check [other repositories on my profile](https://github.com/GaelKBertrand?tab=repositories&q=&type=public&language=&sort=name) for other detailed computer science or economics projects
+
 
 ## Request Access to Specific Projects
 
