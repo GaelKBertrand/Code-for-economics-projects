@@ -1,5 +1,3 @@
-# MERGING THE DATA 
-
 # Import necessary libraries for analysis
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -16,9 +14,9 @@ merged_data = pd.merge(merged_data, endline_data, on='Participant_ID')
 # Print column names in the merged dataset
 print("Column Names in Merged Dataset:", merged_data.columns)
 
-#ANALYSIS AND REPORTING 
 
-# Merge datasets VERIFICATION
+
+# Merge datasets
 merged_data = pd.merge(baseline_data, random_assignment_data, on='Participant_ID')
 merged_data = pd.merge(merged_data, endline_data, on='Participant_ID')
 
@@ -113,5 +111,45 @@ plt.title('Proportion of Participants with Vaccine Hesitancy by Ad Type')
 plt.xlabel('Ad Type')
 plt.ylabel('Proportion with Vaccine Hesitancy')
 plt.show()
+
+
+# T-test for vaccine uptake rates between Reason and Control groups
+reason_group = merged_data[merged_data['Ad_Type_x'] == 'Reason']['Received_Vaccine']
+control_group = merged_data[merged_data['Ad_Type_x'] == 'Control']['Received_Vaccine']
+t_stat, p_value = ttest_ind(reason_group, control_group)
+print(f"T-test for Vaccine Uptake Rates (Reason vs. Control): p-value = {p_value}")
+
+# Chi-square test for independence between Emotions Ad and Vaccine Uptake
+contingency_table = pd.crosstab(merged_data[merged_data['Ad_Type_x'] == 'Emotions']['Received_Vaccine'],
+                                merged_data[merged_data['Ad_Type_x'] == 'Emotions']['Ad_Type_x'])
+chi2_stat, chi2_p_value, _, _ = chi2_contingency(contingency_table)
+print(f"Chi-square test for Independence (Emotions Ad and Vaccine Uptake): p-value = {chi2_p_value}")
+
+# Logistic regression for binary outcome
+logreg = LogisticRegression()
+X = merged_data[['Age_x', 'Vaccine_Hesitancy_x']]
+y = merged_data['Received_Vaccine']
+logreg.fit(X, y)
+logistic_p_value = logreg.score(X, y)  # This is just an example, you should validate the model
+print(f"Logistic Regression for Vaccine Uptake: Accuracy p-value = {logistic_p_value}")
+
+# Correlation coefficient between Age and Vaccine Hesitancy
+correlation_coefficient, corr_p_value = pointbiserialr(merged_data['Age_x'], merged_data['Vaccine_Hesitancy_x'])
+print(f"Correlation Coefficient between Age and Vaccine Hesitancy: {correlation_coefficient}, p-value = {corr_p_value}")
+
+# Effect size for T-test
+effect_size = sm.stats.proportion_effectsize(reason_group.mean(), control_group.mean())
+print(f"Effect Size (Cohen's d) for T-test: {effect_size}")
+
+# Practical Significance Context
+if p_value < 0.05:
+    print("Statistically significant difference observed.")
+    if effect_size > 0.2:
+        print("The observed difference is also practically significant.")
+    else:
+        print("The observed difference may not be practically significant.")
+else:
+    print("No statistically significant difference observed.")
+
 
 
