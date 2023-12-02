@@ -13,7 +13,7 @@ This project simulates and analyzes data from a Facebook ad campaign experiment.
 
 ### Google Colab (Recommended)
 
-1. Open the provided collab .ipynb file (`azCollab_Bertrand_Kwibuka_Urbana_Champaign_Data_Task.ipynb`) in Google Colab.
+1. Open the provided collab .ipynb file (`Bertrand_Kwibuka_Urbana_Champaign_Data_Task.ipynb`) in Google Colab.
 2. Execute each cell step-by-step in the given order.
 
 ### Local Environment
@@ -86,7 +86,7 @@ The analysis and reporting are performed in the `analysis_and_reporting.py` scri
 
 ## Results
 
-After simulating the data and conducting a comprehensive analysis of the Facebook ad campaign experiment, the following key results were obtained. You may find my instance output figures and plots in the results folder. 
+After simulating the data and conducting a comprehensive analysis of the Facebook ad campaign experiment, the following key results were obtained. You may find my instance output figures and plots in the .ipynb file (`Bertrand_Kwibuka_Urbana_Champaign_Data_Task.ipynb`) 
 
 ### Effectiveness of Ad Types
 
