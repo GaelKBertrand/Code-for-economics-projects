@@ -137,6 +137,7 @@ print(f"Logistic Regression for Vaccine Uptake: Accuracy p-value = {logistic_p_v
 correlation_coefficient, corr_p_value = pointbiserialr(merged_data['Age_x'], merged_data['Vaccine_Hesitancy_x'])
 print(f"Correlation Coefficient between Age and Vaccine Hesitancy: {correlation_coefficient}, p-value = {corr_p_value}")
 
+
 # Effect size for T-test
 effect_size = sm.stats.proportion_effectsize(reason_group.mean(), control_group.mean())
 print(f"Effect Size (Cohen's d) for T-test: {effect_size}")
