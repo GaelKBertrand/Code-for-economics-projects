@@ -86,7 +86,7 @@ The analysis and reporting are performed in the `analysis_and_reporting.py` scri
 
 ## Results
 
-After simulating the data and conducting a comprehensive analysis of the Facebook ad campaign experiment, the following key results were obtained:
+After simulating the data and conducting a comprehensive analysis of the Facebook ad campaign experiment, the following key results were obtained. You may find my instance output figures and plots in the results folder. 
 
 ### Effectiveness of Ad Types
 
