@@ -14,12 +14,6 @@ merged_data = pd.merge(merged_data, endline_data, on='Participant_ID')
 # Print column names in the merged dataset
 print("Column Names in Merged Dataset:", merged_data.columns)
 
-
-
-# Merge datasets
-merged_data = pd.merge(baseline_data, random_assignment_data, on='Participant_ID')
-merged_data = pd.merge(merged_data, endline_data, on='Participant_ID')
-
 # Convert 'Received_Vaccine' to numeric
 merged_data['Received_Vaccine'] = pd.to_numeric(merged_data['Received_Vaccine'].replace({'Yes': 1, 'No': 0}))
 # Convert 'Vaccine_Hesitancy_x' to numeric values
@@ -130,7 +124,8 @@ logreg = LogisticRegression()
 X = merged_data[['Age_x', 'Vaccine_Hesitancy_x']]
 y = merged_data['Received_Vaccine']
 logreg.fit(X, y)
-logistic_p_value = logreg.score(X, y)  # This is just an example, you should validate the model
+logistic_p_value = logreg.score(X, y)  # This is just an example because we need to measure effectiveness, one should validate the model and form further hypotheses
+
 print(f"Logistic Regression for Vaccine Uptake: Accuracy p-value = {logistic_p_value}")
 
 # Correlation coefficient between Age and Vaccine Hesitancy
