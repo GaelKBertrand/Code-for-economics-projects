@@ -230,4 +230,48 @@ plt.title('Proportion of Participants with Vaccine Hesitancy by Ad Type')
 plt.xlabel('Ad Type')
 plt.ylabel('Proportion with Vaccine Hesitancy')
 plt.show()
+
 # Figure 5: Proportion of Participants with Vaccine Hesitancy by Ad Type
+=======
+
+
+# T-test for vaccine uptake rates between Reason and Control groups
+reason_group = merged_data[merged_data['Ad_Type_x'] == 'Reason']['Received_Vaccine']
+control_group = merged_data[merged_data['Ad_Type_x'] == 'Control']['Received_Vaccine']
+t_stat, p_value = ttest_ind(reason_group, control_group)
+print(f"T-test for Vaccine Uptake Rates (Reason vs. Control): p-value = {p_value}")
+
+# Chi-square test for independence between Emotions Ad and Vaccine Uptake
+contingency_table = pd.crosstab(merged_data[merged_data['Ad_Type_x'] == 'Emotions']['Received_Vaccine'],
+                                merged_data[merged_data['Ad_Type_x'] == 'Emotions']['Ad_Type_x'])
+chi2_stat, chi2_p_value, _, _ = chi2_contingency(contingency_table)
+print(f"Chi-square test for Independence (Emotions Ad and Vaccine Uptake): p-value = {chi2_p_value}")
+
+# Logistic regression for binary outcome
+logreg = LogisticRegression()
+X = merged_data[['Age_x', 'Vaccine_Hesitancy_x']]
+y = merged_data['Received_Vaccine']
+logreg.fit(X, y)
+logistic_p_value = logreg.score(X, y)  # This is just an example because we need to measure effectiveness, one should validate the model and form further hypotheses
+
+print(f"Logistic Regression for Vaccine Uptake: Accuracy p-value = {logistic_p_value}")
+
+# Correlation coefficient between Age and Vaccine Hesitancy
+correlation_coefficient, corr_p_value = pointbiserialr(merged_data['Age_x'], merged_data['Vaccine_Hesitancy_x'])
+print(f"Correlation Coefficient between Age and Vaccine Hesitancy: {correlation_coefficient}, p-value = {corr_p_value}")
+
+# Effect size for T-test
+effect_size = sm.stats.proportion_effectsize(reason_group.mean(), control_group.mean())
+print(f"Effect Size (Cohen's d) for T-test: {effect_size}")
+
+# Practical Significance Context
+if p_value < 0.05:
+    print("Statistically significant difference observed.")
+    if effect_size > 0.2:
+        print("The observed difference is also practically significant.")
+    else:
+        print("The observed difference may not be practically significant.")
+else:
+    print("No statistically significant difference observed.")
+
+
