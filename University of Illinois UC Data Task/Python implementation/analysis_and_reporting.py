@@ -21,6 +21,7 @@ merged_data['Received_Vaccine'] = pd.to_numeric(merged_data['Received_Vaccine'].
 vaccine_hesitancy_mapping = {'No': 0, 'Yes': 1, 'Not Sure': 2}
 merged_data['Vaccine_Hesitancy_x'] = merged_data['Vaccine_Hesitancy_x'].map(vaccine_hesitancy_mapping)
 
+
 #Analysis and reporting figures and tables
 #Part 1: Descriptive Statistics and Visualizations:
 
@@ -50,10 +51,6 @@ table3.columns = ["Did Not Receive Vaccine", "Received Vaccine", "Total"]
 display(table3)
 
 #Part 2: Statistical Tests and Modeling:
-
-## Part 2: Statistical Tests and Modeling:
-
-## Part 2: Statistical Tests and Modeling:
 
 # T-test for vaccine uptake rates between Reason and Control groups
 reason_group = merged_data[merged_data['Ad_Type_x'] == 'Reason']['Received_Vaccine']
