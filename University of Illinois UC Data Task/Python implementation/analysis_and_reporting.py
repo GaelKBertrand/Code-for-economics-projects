@@ -309,3 +309,4 @@ plt.xlabel('Ad Type')
 plt.ylabel('Proportion with Vaccine Hesitancy')
 plt.show()
 # Figure 5: Proportion of Participants with Vaccine Hesitancy by Ad Type
+
