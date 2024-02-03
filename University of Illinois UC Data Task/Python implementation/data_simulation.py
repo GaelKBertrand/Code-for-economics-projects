@@ -91,7 +91,6 @@ def generate_endline_survey_data(baseline_data, num_endline_participants):
 
     return endline_data
 
-
 # Generate endline survey data
 endline_data = generate_endline_survey_data(baseline_data, 4500)
 
